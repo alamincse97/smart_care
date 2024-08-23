@@ -5,7 +5,7 @@ from . import views
 router = DefaultRouter()
 
 # antena
-router.register('contact_us', views.ContactusViewset)
+router.register('', views.ContactusViewset)
 urlpatterns = [
     path('', include(router.urls)),
 ]
