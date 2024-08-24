@@ -21,3 +21,8 @@ class AvailableTimeSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.AvailableTime
         fields = '__all__'
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Review
+        fields = '__all__'
