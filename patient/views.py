@@ -18,4 +18,6 @@ class UserRegistrationApiView(APIView):
         serializer = self.serializer_class(data=request.data)
         
         if serializer.is_valid():
-            return Response("done")
+            user = serializer.save()
+            return Response("form done")
+        return Response(serializer.errors)
