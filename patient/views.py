@@ -3,6 +3,7 @@ from rest_framework import viewsets
 from . import models
 from . import serializers
 from rest_framework.views import APIView
+from rest_framework.response import Response
 
 # Create your views here.
 
@@ -12,3 +13,9 @@ class PatientViewset(viewsets.ModelViewSet):
 
 class UserRegistrationApiView(APIView):
     serializer_class = serializers.RegistrationSerializer
+    
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        
+        if serializer.is_valid():
+            return Response("done")
